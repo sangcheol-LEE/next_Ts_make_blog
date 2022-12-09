@@ -1,33 +1,11 @@
-# pre-rerendering
+---
+title: "Two Forms of Pre-rendering"
+date: "2020-01-01"
+---
 
-1. 나 이상철은
-2. 매일 모든 면에서
-3. 점점 더 나아지고 있다.
-4. 나의 확신을 통해 내 스스로
-5. 변하고 성장하고 있음을 난 믿어 의심치 않는다.
+Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
 
-## 타입스크립트와 넥스트 js 정복가능합니다!!!
+- **Static Generation** is the pre-rendering method that generates the HTML at **build time**. The pre-rendered HTML is then _reused_ on each request.
+- **Server-side Rendering** is the pre-rendering method that generates the HTML on **each request**.
 
-1. 나 이상철은
-2. 매일 모든 면에서
-3. 점점 더 나아지고 있다.
-4. 나의 확신을 통해 내 스스로
-5. 변하고 성장하고 있음을 난 믿어 의심치 않는다.
-
-## 타입스크립트와 넥스트 js 정복가능합니다!!!
-
-1. 나 이상철은
-2. 매일 모든 면에서
-3. 점점 더 나아지고 있다.
-4. 나의 확신을 통해 내 스스로
-5. 변하고 성장하고 있음을 난 믿어 의심치 않는다.
-
-## 타입스크립트와 넥스트 js 정복가능합니다!!!
-
-1. 나 이상철은
-2. 매일 모든 면에서
-3. 점점 더 나아지고 있다.
-4. 나의 확신을 통해 내 스스로
-5. 변하고 성장하고 있음을 난 믿어 의심치 않는다.
-
-## 타입스크립트와 넥스트 js 정복가능합니다!!!
+Importantly, Next.js lets you **choose** which pre-rendering form to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.

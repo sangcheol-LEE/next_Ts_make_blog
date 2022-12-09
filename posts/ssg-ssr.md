@@ -1,33 +1,19 @@
-# ssg - ssr rendering
+---
+title: "When to Use Static Generation v.s. Server-side Rendering"
+date: "2020-01-02"
+---
 
-1. 나 이상철은
-2. 매일 모든 면에서
-3. 점점 더 나아지고 있다.
-4. 나의 확신을 통해 내 스스로
-5. 변하고 성장하고 있음을 난 믿어 의심치 않는다.
+We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
 
-## 타입스크립트와 넥스트 js 정복가능합니다!!!
+You can use Static Generation for many types of pages, including:
 
-1. 나 이상철은
-2. 매일 모든 면에서
-3. 점점 더 나아지고 있다.
-4. 나의 확신을 통해 내 스스로
-5. 변하고 성장하고 있음을 난 믿어 의심치 않는다.
+- Marketing pages
+- Blog posts
+- E-commerce product listings
+- Help and documentation
 
-## 타입스크립트와 넥스트 js 정복가능합니다!!!
+You should ask yourself: "Can I pre-render this page **ahead** of a user's request?" If the answer is yes, then you should choose Static Generation.
 
-1. 나 이상철은
-2. 매일 모든 면에서
-3. 점점 더 나아지고 있다.
-4. 나의 확신을 통해 내 스스로
-5. 변하고 성장하고 있음을 난 믿어 의심치 않는다.
+On the other hand, Static Generation is **not** a good idea if you cannot pre-render a page ahead of a user's request. Maybe your page shows frequently updated data, and the page content changes on every request.
 
-## 타입스크립트와 넥스트 js 정복가능합니다!!!
-
-1. 나 이상철은
-2. 매일 모든 면에서
-3. 점점 더 나아지고 있다.
-4. 나의 확신을 통해 내 스스로
-5. 변하고 성장하고 있음을 난 믿어 의심치 않는다.
-
-## 타입스크립트와 넥스트 js 정복가능합니다!!!
+In that case, you can use **Server-Side Rendering**. It will be slower, but the pre-rendered page will always be up-to-date. Or you can skip pre-rendering and use client-side JavaScript to populate data.

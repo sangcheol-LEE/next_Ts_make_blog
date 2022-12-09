@@ -1,10 +1,18 @@
+import { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { getSortedPostData } from '../lib/post'
 import homeStyles from '../styles/Home.module.css'
-
-export default function Home() {
+import Link from 'next/link'
+const Home = ({allPostsData} : {
+  allPostsData : {
+    date : string
+    title : string
+    id: string
+  }[]
+}) => {
   return (
-    <div>
+    <div className={homeStyles.container}>
       <Head>
         <title>Ian blog </title>
       </Head>
@@ -18,7 +26,15 @@ export default function Home() {
         <h2 className={homeStyles.headingLg}>Blog</h2>
 
         <ul className={homeStyles.list}>
-
+          {allPostsData.map(({id, title, date}) =>
+              <li className={homeStyles.listItem} key={id}>
+                <Link href={`/posts/${id}`}>
+                  {title}
+                </Link>
+                <br />
+                <small className={homeStyles.lightText}>{date}</small>
+              </li>
+            )}
         </ul>
       </section>
 
@@ -26,3 +42,15 @@ export default function Home() {
     </div>
   )
 }
+export default Home
+
+
+export const getStaticProps : GetStaticProps = async () => {
+  const allPostsData = getSortedPostData();
+  return {
+    props : {
+      allPostsData
+    }
+  }
+}
+
